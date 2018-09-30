@@ -9,3 +9,17 @@ module.exports.ls = () => {
         console.log(filesToString);
     });
 };
+
+module.exports.touch = (err) => {
+    fs.writeFile('terminal-commands.js', (err) => {
+        if (err) throw err;
+        console.log('Success');
+    })
+};
+  
+module.exports.mkdir = () => {
+    fs.mkdir('./terminal-commands', (err, files) => {
+        if (err) throw err;
+        console.log('Directory created');
+    })
+};
